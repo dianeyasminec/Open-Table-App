@@ -1,70 +1,44 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+App Component 
 
-### `npm start`
+This component will render the main layout of your app.
+It will contain the FloorPlan and MenuPopup components as well as the state to manage table availability and menu visibility.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FloorPlan Component
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This component will display the floor plan and table availability.
+It will have a list of Table components.
+Table Component
 
-### `npm test`
+This component represents each individual table on the floor plan.
+It will have state to track its availability status (open, seated, need bussing).
+It will handle drag-and-drop events for guests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+GuestIcon Component
 
-### `npm run build`
+This component represents a draggable guest icon.
+It will be rendered on the Table component when a table is not in the "seated" state.
+It will have state to track its position and whether it's currently being dragged.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+MenuPopup Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This component will display the menu options when the user clicks on the menu icon.
+It will be a pop-up modal or a dropdown.
+It will provide a way for the user to select items from the menu.
+With this structure in mind, here's a general flow of how your app would work:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When the app starts, the App component will render the FloorPlan component.
+The FloorPlan component will render multiple Table components.
+Each Table component will have conditional rendering: if the table is in the "seated" state, it will render the seated guest icons; if not, it will render the GuestIcon component for draggable guests.
+When the user drags a GuestIcon component onto a Table, the table's status will update (seated) and the GuestIcon will be removed from the Table component. You might use a library like react-dnd for drag-and-drop functionality.
+If a Table is seated, it will change its color to green. If a Table needs bussing, it will turn orange.
+After a guest has been seated for 5 minutes, you can trigger a state change to update the table's status to "need bussing".
+The MenuPopup component will be triggered by clicking a menu icon on the Table. It will display menu options in a pop-up modal or dropdown.
+The user can select menu items from the MenuPopup, and after selecting, the popup will close, and the user will return to the FloorPlan.
+Remember, this is a high-level overview of how your app's components could interact. You can break down each component into smaller functional parts as needed. As you start coding, feel free to ask more specific questions if you encounter any challenges.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
