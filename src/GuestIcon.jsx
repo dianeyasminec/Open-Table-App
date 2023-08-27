@@ -6,6 +6,8 @@ import React from 'react'
 
 export default function GuestIcon() {
   return (
-    <div>GuestIcon</div>
+    <div>
+        
+    </div>
   )
 }

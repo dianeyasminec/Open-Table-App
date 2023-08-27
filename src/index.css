@@ -1,0 +1,48 @@
+/* styles.css */
+.circle-container {
+    width: 700px; /* Set the desired width and height to create a circular shape */
+    height: 700px;
+    border-radius: 50%; /* Create a circular shape using border-radius */
+    background-color: #f0f0f0; /* Background color of the circular container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  .floor-plan {
+    padding: 200px; /* Space around the floor plan container */
+}
+  
+  .row-spacing {
+    margin-bottom: 3px; /* Space between rows */
+  }
+  
+  .table-cell {
+    border: 1px solid #ddd; /* Add a border for each cell */
+    padding: 35px; /* Space inside each cell */
+    text-align: center; /* Center text in the cell */
+    font-weight: bold;
+    margin-right: 10px;
+    margin: 5px;
+  }
+  
+  .square-table {
+    width: 90px; /* Square table dimension */
+    height: 90px;
+  }
+  
+  .cube-table {
+    width: 6px; /* Cube table dimension */
+    height: 75px;
+  }
+  
+  .rectangular-table {
+    width: 100px; /* Rectangular table dimension */
+    height: 60px;
+  }
+  /* styles.css */
+.row-spacing {
+    padding-bottom: 10px; /* Adjust the value to control the spacing */
+  }
+  
